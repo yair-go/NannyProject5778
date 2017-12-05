@@ -7,5 +7,16 @@ namespace BE
 {
     public class Nanny
     {
+        public string ID
+        {
+            get
+            {
+                throw new System.NotImplementedException();
+            }
+
+            set
+            {
+            }
+        }
     }
 }
