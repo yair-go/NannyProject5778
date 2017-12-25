@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="DS.DataSource" Collapsed="true">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAQAAAAAAAAAAAAAAAAEAAAAQAAAAAAAIAAAA=</HashCode>
+      <FileName>DataSource.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DS.DAL_list">
+    <Position X="3.5" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAAAIAAAEAQAAAABACAABBgIBAKAAAQgAAAAkAAAA=</HashCode>
+      <FileName>DAL_list.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

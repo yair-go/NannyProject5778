@@ -12,6 +12,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.ComponentModel;
+using BL;
+using BE;
 
 namespace PL
 {
@@ -20,9 +23,43 @@ namespace PL
     /// </summary>
     public partial class MainWindow : Window
     {
+        #region Members
+        private MyBL bl;
+        private BindingList<Nanny> NannysList;
+        #endregion
+
         public MainWindow()
         {
             InitializeComponent();
+            bl = MyBL.Instance;
+            CreateDemoEntites();
+            LoadNannyListOnWindow();
+           
+
+        }
+
+        private void CreateDemoEntites()
+        {
+            int[] idArray = new int[] { 1, 2, 3, 4,5 };
+            foreach (int i in idArray)
+            {
+                bl.addNanny(new Nanny(i.ToString(), 20));
+            }
+          
+        }
+
+        private void LoadNannyListOnWindow()
+        {
+            NannysList = bl.getNannysList();
+            lvNanny.DataContext = NannysList;
+        }
+
+        private void addNannyButton_Click(object sender, RoutedEventArgs e)
+        {
+            string id = bl.getLastNannyID();
+            int newID;
+            Int32.TryParse(id, out newID);
+            bl.addNanny(new Nanny((++newID).ToString(), 21));
         }
     }
 }

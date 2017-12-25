@@ -7,16 +7,32 @@ namespace BE
 {
     public class Nanny
     {
-        public string ID
-        {
-            get
-            {
-                throw new System.NotImplementedException();
-            }
+        public string ID { get; }
 
-            set
-            {
-            }
+        public int Age { get; }
+
+        #region Ctor
+        public Nanny()
+        {
+            ID = "";
         }
+
+        public Nanny(string id,int age)
+        {
+            ID = id;
+            Age = age;
+        }
+
+        #endregion
+
+        #region Methods
+        public override string ToString()
+        {
+            return ID + " " + Age;
+
+        }
+
+        #endregion
     }
+
 }
