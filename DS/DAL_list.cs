@@ -23,10 +23,10 @@ namespace DS
 
         static DAL_list()
         {
-            DataSource.NannysList = new BindingList<Nanny>();
-            DataSource.MotherList = new List<Mother>();
-            DataSource.ChildsList = new List<Child>();
-            DataSource.ContractsList = new List<Contract>();
+            //DataSource.NannysList = new BindingList<Nanny>();
+            //DataSource.MotherList = new List<Mother>();
+            //DataSource.ChildsList = new List<Child>();
+            //DataSource.ContractsList = new List<Contract>();
         }
         private DAL_list() { }
 
@@ -67,7 +67,16 @@ namespace DS
 
         public BindingList<Nanny> getNannysList()
         {
-            return DataSource.NannysList;
+            //TODO :
+            //Binding List
+            // option 1, return  BindingList from DataSource
+            // return DataSource.NannysList;
+
+            //option 2, make a clone of 
+            return new BindingList<Nanny>(DataSource.NannysList.Clone());
+            // return new BindingList<Nanny>(DataSource.NannysList);
+
+            
         }
         #endregion
 

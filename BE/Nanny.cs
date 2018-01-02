@@ -5,7 +5,7 @@ using System.Text;
 
 namespace BE
 {
-    public class Nanny
+    public class Nanny : ICloneable
     {
         public string ID { get; }
 
@@ -30,6 +30,11 @@ namespace BE
         {
             return ID + " " + Age;
 
+        }
+
+        public object Clone()
+        {
+            return new Nanny(ID, Age);
         }
 
         #endregion

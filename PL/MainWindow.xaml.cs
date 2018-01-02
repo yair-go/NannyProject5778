@@ -44,6 +44,7 @@ namespace PL
             foreach (int i in idArray)
             {
                 bl.addNanny(new Nanny(i.ToString(), 20));
+              //  bl.addChild(new Child(i.ToString(), 20));
             }
           
         }
@@ -51,15 +52,37 @@ namespace PL
         private void LoadNannyListOnWindow()
         {
             NannysList = bl.getNannysList();
+
+            //option 1. Problem : PL has directly access to DataSource
+            // NannysList.Add(new Nanny("10", 30));
+
             lvNanny.DataContext = NannysList;
+            //
+           // lvNanny.DataContext = bl.getNannysList();
+            
         }
 
         private void addNannyButton_Click(object sender, RoutedEventArgs e)
         {
             string id = bl.getLastNannyID();
             int newID;
-            Int32.TryParse(id, out newID);
-            bl.addNanny(new Nanny((++newID).ToString(), 21));
+            int.TryParse(id, out newID);
+            newID++;
+            bl.addNanny(new Nanny((newID).ToString(), 21));
+
+            //option 0, the PL has another BindingList
+            //Problem : PL responsibility
+
+            //  NannysList.Add(new Nanny((newID).ToString(), 21));
+
+            //option 0, ver 2
+            RefreshWindow();
+        }
+
+        private void RefreshWindow()
+        {
+            //option 0, ver 2. Problem : This is not general enough
+            LoadNannyListOnWindow();
         }
     }
 }

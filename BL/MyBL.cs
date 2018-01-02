@@ -70,11 +70,6 @@ namespace BL
             throw new NotImplementedException();
         }
 
-        public string getLastNannyID()
-        {
-            return MyDal.getLastNannyID();
-        }
-
         public void updateContract(Contract sp, Contract newSP)
         {
             throw new NotImplementedException();
@@ -137,6 +132,11 @@ namespace BL
         {
             if (nanny.Age < 18) throw new Exception("The age must least 18");
             MyDal.addNanny(nanny);
+        }
+
+        public string getLastNannyID()
+        {
+            return MyDal.getLastNannyID();
         }
 
         public void deleteNanny(Nanny sp)
