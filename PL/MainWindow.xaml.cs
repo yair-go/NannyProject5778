@@ -84,5 +84,10 @@ namespace PL
             //option 0, ver 2. Problem : This is not general enough
             LoadNannyListOnWindow();
         }
+
+        private void MenuItem_Click(object sender, RoutedEventArgs e)
+        {
+            new SettingWindow().Show();
+        }
     }
 }

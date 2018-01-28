@@ -1,0 +1,14 @@
+﻿<Window x:Class="PL.SettingWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PL"
+        mc:Ignorable="d"
+        Title="SettingWindow" Height="300" Width="300">
+    <Grid Margin="0,0,2,5">
+        <TextBlock Margin="29,70,187,173" >Data Source : </TextBlock>
+        <ComboBox x:Name="cbDataSource" ItemsSource="{Binding}" SelectionChanged="cbDataSource_SelectionChanged" HorizontalAlignment="Left" Margin="108,70,0,0" VerticalAlignment="Top" Width="74" Height="21"/>
+
+    </Grid>
+</Window>

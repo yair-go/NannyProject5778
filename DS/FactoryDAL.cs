@@ -26,10 +26,12 @@ namespace DS
             switch (typeDL)
             {
                 case "List": return DAL_list.Instance;
-                //  case "XML": return DL_XML.Instance;
+                case "XML": return DAL_XML.Instance;
                 default: return null;
             }
         }
 
     }
+
+   
 }
